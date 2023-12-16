@@ -42,8 +42,6 @@ $result = $s3Client->putObject([
 'ACL'    => 'public-read', // make file 'public'
 ]);
 echo " Image uploaded successfully. Image path is: ". $result->get('ObjectURL');
-
-
 } catch (Aws\S3\Exception\S3Exception $e) {
 echo " There was an error uploading the file.\n";
 echo $e->getMessage();
@@ -60,9 +58,6 @@ echo " Error: There was a problem uploading your file. Please try again.";
 echo " Error: " . $_FILES["anyfile"]["error"];
 }
 }
-
-
-
 $name=$_POST["name"];
 $url=$result->get("ObjectURL");
 
